@@ -1,4 +1,4 @@
-package models;
+package com.scaler.bookmyshow.models;
 
 import java.time.LocalDateTime;
 import java.util.List;

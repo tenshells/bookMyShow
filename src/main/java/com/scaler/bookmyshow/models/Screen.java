@@ -1,28 +1,23 @@
-package models;
+package com.scaler.bookmyshow.models;
 
-import java.sql.Time;
 import java.util.List;
 
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
-public class Show extends BaseModel{
+public class Screen extends BaseModel{
+    private String name;
 
-    @ManyToOne
-    private Movie movie;
-    private Time startTime;
-    private Time endTime;
-
-    @ManyToOne
-    private Screen screen;
+    @OneToMany
+    private List<Seat> seats;
 
     @Enumerated(EnumType.ORDINAL)
     @ElementCollection
